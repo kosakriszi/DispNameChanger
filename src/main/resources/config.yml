@@ -78,9 +78,8 @@ global-announce:
     enabled: true
     target: ALL
 integration:
-    spout:
+    protocollib:
         title: true
-        announcements: true
     tagAPI:
         title: true
 language: en_US
