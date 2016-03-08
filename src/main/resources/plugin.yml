@@ -28,7 +28,7 @@ commands:
             /resetname [target]
             Aliases: resetname
     checkname:
-        aliases: [namecheck, realname, whois]
+        aliases: [namecheck, realname]
         description: Shows the alternate name of the player (Real name or Display name).
         permission: dispname.check
         usage: |

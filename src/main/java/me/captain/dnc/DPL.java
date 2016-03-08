@@ -72,6 +72,12 @@ public class DPL implements Listener {
     public void onPlayerJoin(final PlayerJoinEvent event) {
         Player player = event.getPlayer();
 
+        DP pClass = plugin.getDatabase().find(DP.class).where().ieq("PlayerID", player.getUniqueId().toString()).findUnique();
+        if (pClass != null && !pClass.getPlayerName().equals(player.getName())) {
+            pClass.setPlayerName(player.getName());
+            plugin.getDatabase().save(pClass);
+        }
+
         api.restoreNick(player);
 
         plugin.getOrderedPlayers().put(player.getName(), player);
